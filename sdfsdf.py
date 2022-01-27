@@ -1,5 +1,5 @@
 import turtle
-
+# em deda
 def prepare_fig(fig, x, y):
     fig.hideturtle()
     fig.penup()
