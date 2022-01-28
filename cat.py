@@ -21,7 +21,7 @@ sec.sety(100)
 # random move mouse
 def move_mouse():
     for i in range(10000):
-        time.sleep(1)
+        time.sleep(0.5)
         randmove.randmov(sec)
 
 thread = Thread(target=move_mouse)
