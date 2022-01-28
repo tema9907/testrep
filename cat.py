@@ -15,7 +15,7 @@ sec.sety(100)
 
 
 # movement cat
-def move_cat():
+# def move_cat():
 
 
 # random move mouse
