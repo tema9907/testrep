@@ -4,6 +4,8 @@ import time
 from threading import Thread
 from turtle import *
 
+# for artem
+
 setup(1000, 1000)
 Screen()
 title("Turtle Keys")
