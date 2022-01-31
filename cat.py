@@ -3,75 +3,53 @@ import randmove
 import time
 from threading import Thread
 from turtle import *
-
-# for artem
-
+image ='cat.gif'
 setup(1000, 1000)
-Screen()
+
+scre=Screen()
+scre.addshape(image)
+scre.addshape("cat_left.gif")
 title("Turtle Keys")
-mouse = Turtle("circle")
-mouse.showturtle()
-mouse.penup()
-mouse.setx(100)
-mouse.sety(100)
-
-
-def isCollision(cat, mouse):
-    cxcor = cat.xcor()
-    cycor = cat.ycor()
-    mxcor = mouse.xcor()
-    mycor = mouse.ycor()
-    print("cat(%i,%i) mouse(%i,%i)" % (cxcor, cycor, mxcor, mycor))
-    if ((cxcor >= mxcor-20) and (cxcor <= mxcor+20) and (cycor >= mycor-20) and (cycor <= mycor+20)):
-        return True
-    else:
-        return False
-
-# random move mouse
-
-
+sec  = Turtle("circle")
+sec.showturtle()
+sec.penup()
+sec.setx(100)
+sec.sety(100)
 def move_mouse():
     for i in range(10000):
         time.sleep(0.5)
-        randmove.randmov(mouse)
-
+        randmove.randmov(sec)
 
 thread = Thread(target=move_mouse)
 thread.start()
 
-
-# cat.goto(random.randint(0,900),random.randint(0,900))
-cat = Turtle()
-cat.penup()
-# showturtle()
+move = Turtle()
+move.penup()
+move.shape(image)
 
 
 def k1():
-    cat.forward(45)
-    if isCollision(cat, mouse):
+    move.forward(45)
+
+    if sec.position() == move.position():
         print("словил")
-
-
 def k2():
-    cat.left(45)
-    # cat.shapetransform(1.0, 1.0, 0, 0)
-    if isCollision(cat, mouse):
+    move.left(90)
+    move.shape("cat_left.gif")
+    print(move.heading())
+    if int(move.heading())== 90:
+        move.shape("cat_left.gif")
+    if sec.position() == move.position():
         print("словил")
-
-
 def k3():
-    cat.right(45)
-    # cat.shapetransform(0, 0, 1.0, 1.0)
-    if isCollision(cat, mouse):
+    move.right(90)
+    print("povorot"+move.heading())
+    if sec.position() == move.position():
         print("словил")
-
-
 def k4():
-    cat.back(45)
-    if isCollision(cat, mouse):
+    move.back(45)
+    if sec.position() == move.position():
         print("словил")
-
-
 onkey(k1, "Up")
 onkey(k2, "Left")
 onkey(k3, "Right")
