@@ -1,5 +1,5 @@
 import random
-import randmove
+import randmove as randmove
 import time
 from threading import Thread
 from turtle import *
