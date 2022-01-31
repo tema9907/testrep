@@ -50,7 +50,16 @@ thread.start()
 cat = Turtle()
 cat.penup()
 
-
+def cat_rotate():
+    if int(cat.heading())== 90:
+        cat.shape("cat_top.gif")
+    if int(cat.heading())== 180:
+        cat.shape("cat_left.gif")
+    if int(cat.heading())== 270:
+        cat.shape("cat_down.gif")
+    if int(cat.heading())== 0:
+        cat.shape("cat_right.gif")
+        
 
 def k1():
     cat.forward(45)
@@ -60,31 +69,15 @@ def k1():
 
 def k2():
     cat.left(90)
-    
-    
     print(cat.heading())
-    if int(cat.heading())== 90:
-        cat.shape("cat_top.gif")
-    if int(cat.heading())== 180:
-        cat.shape("cat_left.gif")
-    if int(cat.heading())== 270:
-        cat.shape("cat_down.gif")
-    if int(cat.heading())== 0:
-        cat.shape("cat_right.gif")
+    cat_rotate()
     if isCollision(cat, mouse):
         print("словил")
 
 
 def k3():
     cat.right(90)
-    if int(cat.heading())== 90:
-        cat.shape("cat_top.gif")
-    if int(cat.heading())== 180:
-        cat.shape("cat_left.gif")
-    if int(cat.heading())== 270:
-        cat.shape("cat_down.gif")
-    if int(cat.heading())== 0:
-        cat.shape("cat_right.gif")
+    cat_rotate()
     if isCollision(cat, mouse):
         print("словил")
 
