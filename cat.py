@@ -14,6 +14,10 @@ scre.addshape("cat_left.gif")
 scre.addshape("cat_right.gif")
 scre.addshape("cat_top.gif")
 scre.addshape("cat_down.gif")
+scre.addshape('mouse_left.gif')
+scre.addshape('mouse_right.gif')
+scre.addshape('mouse_down.gif')
+scre.addshape('mouse_top.gif')
 title("Turtle Keys")
 mouse = Turtle("circle")
 mouse.showturtle()
@@ -49,7 +53,7 @@ thread.start()
 
 cat = Turtle()
 cat.penup()
-
+cat.shape("cat_right.gif")
 def cat_rotate():
     if int(cat.heading())== 90:
         cat.shape("cat_top.gif")
