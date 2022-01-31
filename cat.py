@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import random
 import randmove
 import time
@@ -96,5 +95,3 @@ onkey(k4, "Down")
 listen()
 mainloop()
 thread.join()
-=======
->>>>>>> origin/main
