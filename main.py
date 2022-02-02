@@ -34,17 +34,18 @@ def isCollision(cat, mouse):
             print("словил")
         else:
             return 0
-
-
-# thread = Thread(target = mouse.move_mouse(mouse))
-# thread.start()
-# mouse.move_mouse(mouse)
-
+            
 onkey(cat.k1, "Up")
 onkey(cat.k2, "Left")
 onkey(cat.k3, "Right")
 onkey(cat.k4, "Down")
 
+thread = Thread(target = mouse.move_mouse(mouse))
+thread.start()
+# mouse.move_mouse(mouse)
+
+
+
 listen()
 mainloop()
-# thread.join()
+thread.join()
