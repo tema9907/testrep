@@ -1,4 +1,4 @@
-from turtle import Turtle
+from turtle import *
 
 
 class Cat(Turtle):
@@ -19,7 +19,13 @@ class Cat(Turtle):
         if int(self.heading())== 0:
             self.shape("assets/cat_right.gif")
     
-
+    def cat_move(self):
+        onkey(self.k1, "Up")
+        onkey(self.k2, "Left")
+        onkey(self.k3, "Right")
+        onkey(self.k4, "Down")
+        listen()
+        mainloop()
         
     def k1(self):
         self.forward(45)

@@ -10,14 +10,14 @@ setup(1000, 1000)
 Screen()
 scre=Screen()
 
-scre.addshape("cat_left.gif")
-scre.addshape("cat_right.gif")
-scre.addshape("cat_top.gif")
-scre.addshape("cat_down.gif")
-scre.addshape('mouse_left.gif')
-scre.addshape('mouse_right.gif')
-scre.addshape('mouse_down.gif')
-scre.addshape('mouse_top.gif')
+scre.addshape("assets/cat_left.gif")
+scre.addshape("assets/cat_right.gif")
+scre.addshape("assets/cat_top.gif")
+scre.addshape("assets/cat_down.gif")
+scre.addshape('assets/mouse_left.gif')
+scre.addshape('assets/mouse_right.gif')
+scre.addshape('assets/mouse_down.gif')
+scre.addshape('assets/mouse_top.gif')
 title("Turtle Keys")
 mouse = Turtle("circle")
 mouse.showturtle()
@@ -53,16 +53,16 @@ thread.start()
 
 cat = Turtle()
 cat.penup()
-cat.shape("cat_right.gif")
+cat.shape("assets/cat_right.gif")
 def cat_rotate():
     if int(cat.heading())== 90:
-        cat.shape("cat_top.gif")
+        cat.shape("assets/cat_top.gif")
     if int(cat.heading())== 180:
-        cat.shape("cat_left.gif")
+        cat.shape("assets/cat_left.gif")
     if int(cat.heading())== 270:
-        cat.shape("cat_down.gif")
+        cat.shape("assets/cat_down.gif")
     if int(cat.heading())== 0:
-        cat.shape("cat_right.gif")
+        cat.shape("assets/cat_right.gif")
         
 
 def k1():
