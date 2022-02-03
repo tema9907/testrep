@@ -24,8 +24,6 @@ class Cat(Turtle):
         onkey(self.k2, "Left")
         onkey(self.k3, "Right")
         onkey(self.k4, "Down")
-        listen()
-        mainloop()
         
     def k1(self):
         self.forward(45)

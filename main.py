@@ -42,11 +42,14 @@ thread.start()
 # mouse.move_mouse(mouse)
 
 
-thread.join()
 
-thread = Thread(target = cat.cat_move())
-thread.start()
+thread_cat = Thread(target = cat.cat_move())
+thread_cat.start()
 # mouse.move_mouse(mouse)
 
 
+
+listen()
+mainloop()
 thread.join()
+thread_cat.join()
