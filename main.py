@@ -35,18 +35,24 @@ def isCollision(cat, mouse):
         else:
             return 0
             
+onkey(cat.k1, "Up")
+onkey(cat.k2, "Left")
+onkey(cat.k3, "Right")
+onkey(cat.k4, "Down")
+listen()
 
 
 thread = Thread(target = mouse.move_mouse(mouse))
 thread.start()
 # mouse.move_mouse(mouse)
-
+mainloop()
 
 thread.join()
 
-thread = Thread(target = cat.cat_move())
-thread.start()
+#thread1 = Thread(target = cat.cat_move())
+#thread1.start()
 # mouse.move_mouse(mouse)
 
 
-thread.join()
+#thread1.join()
+#print("111111")
