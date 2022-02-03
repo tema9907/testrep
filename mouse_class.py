@@ -15,7 +15,7 @@ class Mouse(Turtle):
 
     def move_mouse(self, mouse):
         for i in range(10000):
-            time.sleep(0.5)
+            time.sleep(0.2)
             self.randmov(mouse)
 
 

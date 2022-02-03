@@ -24,6 +24,7 @@ class Cat(Turtle):
         onkey(self.k2, "Left")
         onkey(self.k3, "Right")
         onkey(self.k4, "Down")
+        listen()
         
     def k1(self):
         self.forward(45)

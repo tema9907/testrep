@@ -1,12 +1,12 @@
-import imp
+from time import sleep
 from turtle import *
+from threading import *
 
+from cat_class import Cat
+from mouse_class import Mouse
 
-class TomasbiyAndJerrybek(Turtle):
-    def __init__(self, Cat, Jerry, shape: str = ..., undobuffersize: int = ..., visible: bool = ...) -> None:
-        super().__init__(shape=shape, undobuffersize=undobuffersize, visible=visible)
-        self.cat = Cat
-        self.mouse = Jerry
+class TomasbiyAndJerrybek():
+    def __init__(self) -> None:
         setup(500, 500)
         Screen()
         screen=Screen()
@@ -19,14 +19,30 @@ class TomasbiyAndJerrybek(Turtle):
         screen.addshape("assets/mouse_right.gif")
         screen.addshape("assets/mouse_down.gif")
         screen.addshape("assets/mouse_top.gif")
+        self.cat = Cat()
+        self.mouse = Mouse()
+        self.start()
 
     def isCollision(self):
-        cxcor = self.cat.xcor()
-        cycor = self.cat.ycor()
-        mxcor = self.mouse.xcor()
-        mycor = self.mouse.ycor()
-        print("cat(%i,%i) mouse(%i,%i)" % (cxcor, cycor, mxcor, mycor))
-        if ((cxcor >= mxcor-20) and (cxcor <= mxcor+20) and (cycor >= mycor-20) and (cycor <= mycor+20)):
-            print("словил")
-        else:
-            return 0 
+        while(True):
+            cxcor = self.cat.xcor()
+            cycor = self.cat.ycor()
+            mxcor = self.mouse.xcor()
+            mycor = self.mouse.ycor()
+            print("cat(%i,%i) mouse(%i,%i)" % (cxcor, cycor, mxcor, mycor))
+            if ((cxcor >= mxcor-20) and (cxcor <= mxcor+20) and (cycor >= mycor-20) and (cycor <= mycor+20)):
+                print("словил")
+            else:
+                pass
+
+    def start(self):
+        self.cat.cat_move()
+        thread_mouse = Thread(target = self.mouse.move_mouse(self.mouse))
+        thread_mouse.start()
+        thread_collision = Thread(target=self.isCollision)
+        thread_collision.start()
+        mainloop()
+        thread_mouse.join()
+        thread_collision.join()
+
+    
