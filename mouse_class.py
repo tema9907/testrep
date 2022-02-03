@@ -13,9 +13,22 @@ class Mouse(Turtle):
         self.setx(100)
         self.sety(100)
 
-    def move_mouse(self, mouse):
+    def isCollision(self):
+        while(True):
+            pass
+    
+    def move_mouse(self, mouse, cat):
         for i in range(10000):
             time.sleep(0.2)
+            cxcor = cat.xcor()
+            cycor = cat.ycor()
+            mxcor = mouse.xcor()
+            mycor = mouse.ycor()
+            print("cat(%i,%i) mouse(%i,%i)" % (cxcor, cycor, mxcor, mycor))
+            if ((cxcor >= mxcor-20) and (cxcor <= mxcor+20) and (cycor >= mycor-20) and (cycor <= mycor+20)):
+                print("словил")
+            else:
+                pass
             self.randmov(mouse)
 
 

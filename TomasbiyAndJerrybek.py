@@ -23,21 +23,10 @@ class TomasbiyAndJerrybek():
         self.mouse = Mouse()
         self.start()
 
-    def isCollision(self):
-        while(True):
-            cxcor = self.cat.xcor()
-            cycor = self.cat.ycor()
-            mxcor = self.mouse.xcor()
-            mycor = self.mouse.ycor()
-            print("cat(%i,%i) mouse(%i,%i)" % (cxcor, cycor, mxcor, mycor))
-            if ((cxcor >= mxcor-20) and (cxcor <= mxcor+20) and (cycor >= mycor-20) and (cycor <= mycor+20)):
-                print("словил")
-            else:
-                pass
 
     def start(self):
         self.cat.cat_move()
-        thread_mouse = Thread(target = self.mouse.move_mouse(self.mouse))
+        thread_mouse = Thread(target = self.mouse.move_mouse(self.mouse, self.cat))
         thread_mouse.start()
         thread_collision = Thread(target=self.isCollision)
         thread_collision.start()
