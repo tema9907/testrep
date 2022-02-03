@@ -4,7 +4,7 @@ from mouse_class import *
 from threading import Thread
 from turtle import *
 
-# for artem
+# ARTEM FUCK U
 
 # setup(500, 500)
 # Screen()
