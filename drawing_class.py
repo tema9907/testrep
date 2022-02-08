@@ -3,7 +3,7 @@ from turtle import *
 from threading import *
 import turtle
 
-from cat_class import Cat
+from cat_class import *
 from mouse_class import *
 
 class Drawing(Turtle):
@@ -13,24 +13,27 @@ class Drawing(Turtle):
 
 
     def floor():
-        speed(0)
-        penup()
-        goto(-250, 260)
-        pendown()
-        color("black")
-        pensize(6)
-        setheading(270)
-        forward(530)
-        penup()
-        goto(250, 260)
-        pendown()
-        forward(530)
-        penup()
+        turtle.showturtle()
+        turtle.speed(0)
+        turtle.penup()
+        turtle.goto(-250, 260)
+        turtle.pendown()
+        turtle.color("black")
+        turtle.pensize(6)
+        turtle.setheading(270)
+        turtle.forward(530)
+        turtle.penup()
+        turtle.goto(250, 260)
+        turtle.pendown()
+        turtle.forward(530)
+        turtle.penup()
+        turtle.hideturtle()
 
 
     def draw_star(x,y,size,color):
-        
+        turtle.showturtle()
         angle = 120
+        turtle.pencolor('black')
         turtle.penup()
         turtle.goto(x,y)
         turtle.fillcolor(color)
@@ -42,10 +45,19 @@ class Drawing(Turtle):
             turtle.forward(size)
             turtle.right(72 - angle)
         turtle.end_fill()
-   
+        turtle.hideturtle()
+    
 
     def draw_score(score):
+        turtle.showturtle()
         turtle.penup()
-        goto(100,100)
+        goto(-340, 235)
         turtle.pendown()
-        write("score"+ str(score), move=False, align="left", font=("Arial", 12, "normal"))
+        if score == 0:
+            turtle.write("score: "+ str(score), move=False, align="left", font=("Arial", 12, "normal"))
+        else:
+            turtle.color("white")
+            turtle.write("score: " + str(score - 1), move=False, align="left", font=("Arial", 12, "normal"))
+            turtle.color("black")
+            turtle.write("score: " + str(score), move=False, align="left", font=("Arial", 12, "normal"))
+        turtle.hideturtle()

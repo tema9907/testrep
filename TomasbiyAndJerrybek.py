@@ -3,7 +3,7 @@ from time import sleep
 from turtle import *
 from threading import *
 
-from cat_class import Cat
+from cat_class import *
 from mouse_class import Mouse
 from drawing_class import *
 
@@ -25,8 +25,8 @@ class TomasbiyAndJerrybek():
         screen.addshape("assets/mouse_right.gif")
         screen.addshape("assets/mouse_down.gif")
         screen.addshape("assets/mouse_top.gif")
-        self.cat = Cat()
         self.mouse = Mouse()
+        self.cat = Cat(self.mouse)
         self.start()
 
     def interface(self):

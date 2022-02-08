@@ -2,7 +2,6 @@ import random
 import time
 from playsound import playsound
 from turtle import Turtle, screensize
-from drawing_class import Drawing
 
 
 class Mouse(Turtle):
@@ -14,37 +13,38 @@ class Mouse(Turtle):
         self.setx(90)
         self.sety(90)
 
+
     def move_mouse(self, mouse, cat):
         c = 199
-        score = 0
         while True:
             time.sleep(0.03)
             c += 1
             if c // 200:
-                cxcor = cat.xcor()
-                cycor = cat.ycor()
-                mxcor = mouse.xcor()
-                mycor = mouse.ycor()
-                print("cat(%i,%i) mouse(%i,%i)" % (cxcor, cycor, mxcor, mycor))
-                if ((cxcor >= mxcor-20) and (cxcor <= mxcor+20) and (cycor >= mycor-20) and (cycor <= mycor+20)):
-                    print("словил")
-                    score+=1
-                    self.hideturtle()
-                    playsound('assets/wilhelm_scream.mp3')
-                    Drawing.draw_score(score)
-                    
-                    Drawing.draw_star(mxcor,mycor,15,"red")
-                else:
-                    pass
-                self.randmov(mouse)
+                self.randmov(mouse, cat)
+                # cxcor = cat.xcor()
+                # cycor = cat.ycor()
+                # mxcor = mouse.xcor()
+                # mycor = mouse.ycor()
+                # print("cat(%i,%i) mouse(%i,%i)" % (cxcor, cycor, mxcor, mycor))
+                # if ((cxcor >= mxcor-20) and (cxcor <= mxcor+20) and (cycor >= mycor-20) and (cycor <= mycor+20)):
+                #     print("словил")
+                #     self.score+=1
+                #     self.hideturtle()
+                #     playsound('assets/wilhelm_scream.mp3')
+                #     Drawing.draw_star(mxcor, mycor, 15, "red")
+                #     DrawScore.draw_score(self.score)
+                # else:
+                #     pass
 
 
-    def randmov(self, mouse):
-        self.showturtle()
+    def randmov(self, mouse, cat):
+        # self.showturtle()
         screen_height, screen_width = 500, 500
         r=random.randint(1, 4)
         mxcor = mouse.xcor()
         mycor = mouse.ycor()
+        cxcor = cat.xcor()
+        cycor = cat.ycor()
         
         if r==1 and mycor + 50 <= screen_height/2:
             self.setheading(90)
