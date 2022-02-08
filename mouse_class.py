@@ -44,19 +44,19 @@ class Mouse(Turtle):
         mxcor = mouse.xcor()
         mycor = mouse.ycor()
         
-        if r==1 and mycor + 45 <= screen_height/2:
+        if r==1 and mycor + 50 <= screen_height/2:
             self.setheading(90)
             self.shape("assets/mouse_top.gif")
             self.forward(45)
-        if r==2 and mxcor - 45 >= -screen_width/2:
+        if r==2 and mxcor - 50 >= -screen_width/2:
             self.setheading(180)
             self.shape("assets/mouse_left.gif")
             self.forward(45)
-        if r==3 and mxcor + 45 <= screen_width/2:
+        if r==3 and mxcor + 50 <= screen_width/2:
             self.setheading(0)
             self.shape("assets/mouse_right.gif")
             self.forward(45)
-        if r==4 and mycor - 45 >= -screen_height/2:
+        if r==4 and mycor - 50 >= -screen_height/2:
             self.setheading(270)
             self.shape("assets/mouse_down.gif")
             self.forward(45)

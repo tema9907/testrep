@@ -7,17 +7,27 @@ from cat_class import Cat
 from mouse_class import Mouse
 
 class Drawing(Turtle):
-  
-
 
     def snowflake(self):
         pass
 
 
     def floor():
+        speed(0)
+        penup()
+        goto(-250, 260)
         pendown()
-        goto(200, 100)
-    
+        color("black")
+        pensize(6)
+        setheading(270)
+        forward(530)
+        penup()
+        goto(250, 260)
+        pendown()
+        forward(530)
+        penup()
+
+
     def draw_star(size,color):
         angle = 120
         turtle.fillcolor(color)

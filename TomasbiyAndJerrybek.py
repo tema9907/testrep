@@ -10,7 +10,7 @@ from drawing_class import *
 
 class TomasbiyAndJerrybek():
     def __init__(self) -> None:
-        self.screen_height = 500
+        self.screen_height = 512
         self.screen_width  = 700
         # setup(600, 600)
         setup(self.screen_width, self.screen_height)
@@ -33,15 +33,15 @@ class TomasbiyAndJerrybek():
 
 
     def interface(self):
+        print("1111111111111111")
         Drawing.floor()
         print("1111111111111111")
-        Drawing.draw_star(100,"purple")
 
 
     def start(self):
-        Drawing.floor()
-        print("1111111111111111")
-        Drawing.draw_star(10,"red")
+        self.interface()
+        # print("1111111111111111")
+        # Drawing.draw_star(10,"red")
         self.cat.cat_move()
         
         thread_mouse = Thread(target = self.mouse.move_mouse(self.mouse, self.cat))
