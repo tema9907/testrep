@@ -41,6 +41,6 @@ class Drawing(Turtle):
         turtle.end_fill()
    
 
-    def draw_score():
+    def draw_score(score):
         goto(100,100)
-        write("score", move=False, align="left", font=("Arial", 12, "normal"))
+        write("score"+ str(score), move=False, align="left", font=("Arial", 12, "normal"))

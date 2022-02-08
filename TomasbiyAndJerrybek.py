@@ -35,6 +35,7 @@ class TomasbiyAndJerrybek():
     def interface(self):
         print("1111111111111111")
         Drawing.floor()
+        Drawing.draw_score(0)
         print("1111111111111111")
 
 

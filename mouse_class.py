@@ -22,7 +22,8 @@ class Mouse(Turtle):
 
     def move_mouse(self, mouse, cat):
         c = 199
-        for i in range(10000):
+        score = 0
+        while True:
             time.sleep(0.03)
             c += 1
             if c // 200:
@@ -33,8 +34,9 @@ class Mouse(Turtle):
                 print("cat(%i,%i) mouse(%i,%i)" % (cxcor, cycor, mxcor, mycor))
                 if ((cxcor >= mxcor-20) and (cxcor <= mxcor+20) and (cycor >= mycor-20) and (cycor <= mycor+20)):
                     print("словил")
+                    score+=1
                     playsound('assets/wilhelm_scream.mp3')
-                    Drawing.draw_score()
+                    Drawing.draw_score(score)
                 else:
                     pass
                 self.randmov(mouse)
