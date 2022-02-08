@@ -1,4 +1,4 @@
-import random
+import random #comm
 import randmove as randmove
 import time
 from threading import Thread

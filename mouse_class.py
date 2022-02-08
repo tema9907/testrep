@@ -18,6 +18,7 @@ class Mouse(Turtle):
             pass
     
     def move_mouse(self, mouse, cat):
+<<<<<<< HEAD
         c = 0
         for i in range(10000):
             time.sleep(0.01)
@@ -33,6 +34,20 @@ class Mouse(Turtle):
                 else:
                     pass
                 self.randmov(mouse)
+=======
+        for i in range(10000):
+            time.sleep(0.2)
+            cxcor = cat.xcor()
+            cycor = cat.ycor()
+            mxcor = mouse.xcor()
+            mycor = mouse.ycor()
+            print("cat(%i,%i) mouse(%i,%i)" % (cxcor, cycor, mxcor, mycor))
+            if ((cxcor >= mxcor-20) and (cxcor <= mxcor+20) and (cycor >= mycor-20) and (cycor <= mycor+20)):
+                print("словил")
+            else:
+                pass
+            self.randmov(mouse)
+>>>>>>> ed64282d91142386e8802a9aa35fbec0ec2d23cd
 
 
     def randmov(self, mouse):
