@@ -1,9 +1,12 @@
+import imp
 from time import sleep
 from turtle import *
 from threading import *
 
 from cat_class import Cat
 from mouse_class import Mouse
+from drawing_class import Drawing
+
 
 class TomasbiyAndJerrybek():
     def __init__(self) -> None:
@@ -28,7 +31,8 @@ class TomasbiyAndJerrybek():
 
 
     def interface(self):
-        pass
+        self.drawing = Drawing()
+        self.drawing
 
 
     def start(self):

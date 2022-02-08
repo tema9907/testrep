@@ -1,4 +1,5 @@
 from turtle import *
+import turtle
 
 
 class Cat(Turtle):
@@ -25,7 +26,7 @@ class Cat(Turtle):
         onkey(self.k2, "Left")
         onkey(self.k3, "Right")
         onkey(self.k4, "Down")
-        onkey(exit, "Escape")
+        onkey(turtle.Screen().bye, "Escape")
         listen()
         
 
