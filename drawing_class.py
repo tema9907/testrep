@@ -4,7 +4,7 @@ from threading import *
 import turtle
 
 from cat_class import Cat
-from mouse_class import Mouse
+from mouse_class import *
 
 class Drawing(Turtle):
 
@@ -41,4 +41,6 @@ class Drawing(Turtle):
         turtle.end_fill()
    
 
-    
+    def draw_score():
+        goto(100,100)
+        write("score", move=False, align="left", font=("Arial", 12, "normal"))

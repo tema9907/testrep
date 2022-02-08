@@ -2,6 +2,7 @@ import random
 import time
 from playsound import playsound
 from turtle import Turtle, screensize
+from drawing_class import *
 
 
 class Mouse(Turtle):
@@ -33,6 +34,7 @@ class Mouse(Turtle):
                 if ((cxcor >= mxcor-20) and (cxcor <= mxcor+20) and (cycor >= mycor-20) and (cycor <= mycor+20)):
                     print("словил")
                     playsound('assets/wilhelm_scream.mp3')
+                    Drawing.draw_score()
                 else:
                     pass
                 self.randmov(mouse)
