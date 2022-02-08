@@ -1,8 +1,8 @@
 from TomasbiyAndJerrybek import TomasbiyAndJerrybek
-from cat_class import *
-from mouse_class import *
-from threading import Thread
-from turtle import *
+# from cat_class import *
+# from mouse_class import *
+# from threading import Thread
+# from turtle import *
 
 # ARTEM FUCK U
 
@@ -21,6 +21,7 @@ from turtle import *
 # scre.addshape("assets/mouse_top.gif")
 
 game = TomasbiyAndJerrybek()
+game.interface()
 game.start()
 
 # def isCollision(cat, mouse):

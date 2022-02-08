@@ -5,8 +5,10 @@ from threading import Thread
 from turtle import *
 
 # for artem
+screen_height = 500
+screen_width = 500
 
-setup(1000, 1000)
+setup(screen_height, screen_width)
 Screen()
 scre=Screen()
 
@@ -41,9 +43,10 @@ def isCollision(cat, mouse):
 
 
 def move_mouse():
+    global screen_height, screen_width
     for i in range(10000):
         time.sleep(0.5)
-        randmove.randmov(mouse)
+        randmove.randmov(mouse, screen_height, screen_width)
 
 
 thread = Thread(target=move_mouse)

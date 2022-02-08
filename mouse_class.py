@@ -1,6 +1,6 @@
 import random
 import time
-from turtle import Turtle
+from turtle import Turtle, screensize
 
 
 
@@ -18,24 +18,49 @@ class Mouse(Turtle):
             pass
     
     def move_mouse(self, mouse, cat):
+        c = 0
         for i in range(10000):
-            time.sleep(0.2)
-            cxcor = cat.xcor()
-            cycor = cat.ycor()
-            mxcor = mouse.xcor()
-            mycor = mouse.ycor()
-            print("cat(%i,%i) mouse(%i,%i)" % (cxcor, cycor, mxcor, mycor))
-            if ((cxcor >= mxcor-20) and (cxcor <= mxcor+20) and (cycor >= mycor-20) and (cycor <= mycor+20)):
-                print("словил")
-            else:
-                pass
-            self.randmov(mouse)
+            time.sleep(0.01)
+            c += 1
+            if c // 200:
+                cxcor = cat.xcor()
+                cycor = cat.ycor()
+                mxcor = mouse.xcor()
+                mycor = mouse.ycor()
+                print("cat(%i,%i) mouse(%i,%i)" % (cxcor, cycor, mxcor, mycor))
+                if ((cxcor >= mxcor-20) and (cxcor <= mxcor+20) and (cycor >= mycor-20) and (cycor <= mycor+20)):
+                    print("словил")
+                else:
+                    pass
+                self.randmov(mouse)
 
 
     def randmov(self, mouse):
-        r=random.randint(1, 4) 
+        screen_height, screen_width = 600, 500
+        r=random.randint(1, 4)
+        mxcor = mouse.xcor()
+        mycor = mouse.ycor()
+        
         if r==1:
+            if (int(mouse.heading()) == 90 or \
+                int(mouse.heading()) == 270) and \
+                abs(mycor) + 45 >= screen_height/2:
+                r = random.choice([2, 3])
+            if (int(mouse.heading()) == 0 or \
+                int(mouse.heading()) == 180) and \
+                abs(mxcor) + 45 >= screen_width/2:
+                r = random.choice([2, 3])
             return(mouse.forward(45))
+        if r==4:
+            if (int(mouse.heading()) == 90 or \
+                int(mouse.heading()) == 270) and \
+                abs(mycor) + 45 >= screen_height/2:
+                r = random.choice([2, 3])
+            if (int(mouse.heading()) == 0 or \
+                int(mouse.heading()) == 180) and \
+                abs(mxcor) + 45 >= screen_width/2:
+                r = random.choice([2, 3])
+            return(mouse.back(45))
         if r==2:
             if int(mouse.heading())== 90:
                 self.shape("assets/mouse_top.gif")
@@ -56,5 +81,3 @@ class Mouse(Turtle):
             if int(mouse.heading())== 0:
                 self.shape("assets/mouse_right.gif")
             return(mouse.right(90))
-        if r==4:
-            return(mouse.back(45))

@@ -7,12 +7,15 @@ from mouse_class import Mouse
 
 class TomasbiyAndJerrybek():
     def __init__(self) -> None:
-        setup(500, 500)
+        self.screen_height = 600
+        self.screen_width  = 600
+        # setup(600, 600)
+        setup(self.screen_height, self.screen_width)
         Screen()
         screen=Screen()
         title("Tomasbiy and Jerrybek")
         screen.addshape("assets/cat_left.gif")
-        screen.addshape("assets/cat_right.gif")    
+        screen.addshape("assets/cat_right.gif")
         screen.addshape("assets/cat_top.gif")
         screen.addshape("assets/cat_down.gif")
         screen.addshape("assets/mouse_left.gif")
@@ -22,6 +25,10 @@ class TomasbiyAndJerrybek():
         self.cat = Cat()
         self.mouse = Mouse()
         self.start()
+
+
+    def interface(self):
+        pass
 
 
     def start(self):
