@@ -10,10 +10,10 @@ from drawing_class import Drawing
 
 class TomasbiyAndJerrybek():
     def __init__(self) -> None:
-        self.screen_height = 600
-        self.screen_width  = 600
+        self.screen_height = 500
+        self.screen_width  = 700
         # setup(600, 600)
-        setup(self.screen_height, self.screen_width)
+        setup(self.screen_width, self.screen_height)
         Screen()
         screen=Screen()
         title("Tomasbiy and Jerrybek")
@@ -32,7 +32,7 @@ class TomasbiyAndJerrybek():
 
     def interface(self):
         self.drawing = Drawing()
-        self.drawing
+        self.drawing.floor()
 
 
     def start(self):

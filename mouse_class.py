@@ -20,7 +20,7 @@ class Mouse(Turtle):
     
 
     def move_mouse(self, mouse, cat):
-        c = 0
+        c = 199
         for i in range(10000):
             time.sleep(0.03)
             c += 1
@@ -39,7 +39,7 @@ class Mouse(Turtle):
 
 
     def randmov(self, mouse):
-        screen_height, screen_width = 400, 400
+        screen_height, screen_width = 500, 500
         r=random.randint(1, 4)
         mxcor = mouse.xcor()
         mycor = mouse.ycor()

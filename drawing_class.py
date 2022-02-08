@@ -18,5 +18,5 @@ class Drawing(Turtle):
 
 
     def floor(self):
-        
-        pass
+        self.pendown()
+        self.goto(200, 100)
