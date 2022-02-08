@@ -11,7 +11,7 @@ from drawing_class import *
 class TomasbiyAndJerrybek():
     def __init__(self) -> None:
         self.screen_height = 512
-        self.screen_width  = 700
+        self.screen_width  = 750
         # setup(600, 600)
         setup(self.screen_width, self.screen_height)
         #Screen()
@@ -36,6 +36,7 @@ class TomasbiyAndJerrybek():
         Drawing.draw_score(0)
         # Drawing.exit_button()
         Drawing.authors()
+        Drawing.snowflake()
         print("Interface нарисован")
 
     def start(self):

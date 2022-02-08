@@ -1,15 +1,52 @@
+from cmath import asin
 from time import sleep
 from turtle import *
 from threading import *
 import turtle
+from math import sin, pi
 
 from cat_class import *
 from mouse_class import *
 
 class Drawing(Turtle):
 
-    def snowflake(self):
-        pass
+    def snowflake():
+        angle = 0
+        turtle.speed(0)
+        turtle.pensize(2)
+        while angle < 32 * pi:
+            turtle.goto(40*sin(angle) + 312, -60*angle + 132)
+            angle += 0.1
+            turtle.penup()
+            # turtle.goto(312, 132)
+            # turtle.goto(i, 312 + 500*sin((i/100)*2*pi))
+            if angle // 5 == 0:
+                # y = asin(i) * 50
+                turtle.pendown()
+                for _ in range(0, 6):
+                    turtle.forward(10)
+                    turtle.forward(-4)
+                    turtle.left(40)
+                    turtle.forward(3)
+                    turtle.forward(-3)
+                    turtle.right(80)
+                    turtle.forward(3)
+                    turtle.forward(-3)
+                    turtle.left(40)
+                    turtle.forward(-6)
+                    turtle.right(60)
+                turtle.penup()
+                turtle.goto(40*sin(angle) + 312 - 20, -60*angle + 132 + 20)
+                turtle.setheading(0)
+                turtle.pencolor("white")
+                turtle.fillcolor('white')
+                turtle.begin_fill()
+                for i in range(4):
+                    turtle.forward(40)
+                    turtle.right(90)
+                turtle.end_fill()
+                turtle.pencolor("black")
+                turtle.penup()
 
 
     def floor():
@@ -40,7 +77,7 @@ class Drawing(Turtle):
         turtle.forward(530)
         turtle.penup()
         turtle.hideturtle()
-
+    
 
     def draw_star(x,y,size,color):
         turtle.showturtle()
@@ -63,7 +100,7 @@ class Drawing(Turtle):
     def draw_score(score):
         turtle.showturtle()
         turtle.penup()
-        goto(-340, 235)
+        goto(-365, 235)
         # turtle.pendown()
         if score == 0:
             turtle.write("score: "+ str(score), move=False, align="left", font=("Arial", 12, "normal"))
@@ -87,7 +124,7 @@ class Drawing(Turtle):
         authors.goto(255, 190)
         authors.write("Одарич", move=False, align="left", font=("Arial", 12, "normal"))
         authors.goto(255, 175)
-        authors.write("Семейников", move=False, align="left", font=("Arial", 11, "normal"))
+        authors.write("Семейников", move=False, align="left", font=("Arial", 12, "normal"))
         authors.goto(255, 160)
         authors.write("Долгушин", move=False, align="left", font=("Arial", 12, "normal"))
 
