@@ -10,15 +10,16 @@ class Cat(Turtle):
 
 
     def cat_rotate(self):
-        if int(self.heading())== 90:
-            self.shape("assets/cat_top.gif")
-        if int(self.heading())== 180:
-            self.shape("assets/cat_left.gif")
-        if int(self.heading())== 270:
-            self.shape("assets/cat_down.gif")
-        if int(self.heading())== 0:
-            self.shape("assets/cat_right.gif")
+        if int(self.heading()) == 90:
+            return 1
+        if int(self.heading()) == 180:
+            return 2
+        if int(self.heading()) == 270:
+            return 3
+        if int(self.heading()) == 0:
+            return 4
     
+
     def cat_move(self):
         onkey(self.k1, "Up")
         onkey(self.k2, "Left")
@@ -26,20 +27,26 @@ class Cat(Turtle):
         onkey(self.k4, "Down")
         listen()
         
+
     def k1(self):
+        self.setheading(90)
+        self.shape("assets/cat_top.gif")
         self.forward(45)
         
 
     def k2(self):
-        self.left(90)
-        self.cat_rotate()
+        self.setheading(180)
+        self.shape("assets/cat_left.gif")
+        self.forward(45)
     
     
     def k3(self):
-        self.right(90)
-        self.cat_rotate()
+        self.setheading(0)
+        self.shape("assets/cat_right.gif")
+        self.forward(45)
     
     
     def k4(self):
-        self.back(45)
-
+        self.setheading(270)
+        self.shape("assets/cat_down.gif")
+        self.forward(45)
