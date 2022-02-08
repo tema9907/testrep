@@ -52,7 +52,7 @@ class Drawing(Turtle):
         turtle.showturtle()
         turtle.penup()
         goto(-340, 235)
-        turtle.pendown()
+        # turtle.pendown()
         if score == 0:
             turtle.write("score: "+ str(score), move=False, align="left", font=("Arial", 12, "normal"))
         else:

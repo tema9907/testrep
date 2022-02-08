@@ -43,8 +43,6 @@ class Mouse(Turtle):
         r=random.randint(1, 4)
         mxcor = mouse.xcor()
         mycor = mouse.ycor()
-        cxcor = cat.xcor()
-        cycor = cat.ycor()
         
         if r==1 and mycor + 50 <= screen_height/2:
             self.setheading(90)

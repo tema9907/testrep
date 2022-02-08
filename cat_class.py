@@ -38,31 +38,36 @@ class Cat(Turtle):
         onkey(self.k4, "Down")
         onkey(turtle.Screen().bye, "Escape")
         listen()
-        
+    
 
     def k1(self):
         self.setheading(90)
         self.shape("assets/cat_top.gif")
-        self.forward(45)
+        print(self.ycor())
+        if self.ycor() + 50 <= 500/2:
+            self.forward(45)
         self.caught(self.mouse)
         
 
     def k2(self):
         self.setheading(180)
         self.shape("assets/cat_left.gif")
-        self.forward(45)
+        if self.xcor() - 50 >= -500/2:
+            self.forward(45)
         self.caught(self.mouse)
     
     
     def k3(self):
         self.setheading(0)
         self.shape("assets/cat_right.gif")
-        self.forward(45)
+        if self.xcor() + 50 <= 500/2:
+            self.forward(45)
         self.caught(self.mouse)
     
     
     def k4(self):
         self.setheading(270)
         self.shape("assets/cat_down.gif")
-        self.forward(45)
+        if self.ycor() - 50 >= -500/2:
+            self.forward(45)
         self.caught(self.mouse)
