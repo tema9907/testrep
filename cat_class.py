@@ -9,18 +9,6 @@ class Cat(Turtle):
         self.penup()
         self.shape("assets/cat_right.gif")
 
-
-    def cat_rotate(self):
-        if int(self.heading()) == 90:
-            return 1
-        if int(self.heading()) == 180:
-            return 2
-        if int(self.heading()) == 270:
-            return 3
-        if int(self.heading()) == 0:
-            return 4
-    
-
     def cat_move(self):
         onkey(self.k1, "Up")
         onkey(self.k2, "Left")

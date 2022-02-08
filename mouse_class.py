@@ -2,7 +2,7 @@ import random
 import time
 from playsound import playsound
 from turtle import Turtle, screensize
-from drawing_class import *
+from drawing_class import Drawing
 
 
 class Mouse(Turtle):
@@ -13,12 +13,6 @@ class Mouse(Turtle):
         self.penup()
         self.setx(90)
         self.sety(90)
-
-
-    def isCollision(self):
-        while(True):
-            pass
-    
 
     def move_mouse(self, mouse, cat):
         c = 199
@@ -35,14 +29,18 @@ class Mouse(Turtle):
                 if ((cxcor >= mxcor-20) and (cxcor <= mxcor+20) and (cycor >= mycor-20) and (cycor <= mycor+20)):
                     print("словил")
                     score+=1
+                    self.hideturtle()
                     playsound('assets/wilhelm_scream.mp3')
                     Drawing.draw_score(score)
+                    
+                    Drawing.draw_star(mxcor,mycor,15,"red")
                 else:
                     pass
                 self.randmov(mouse)
 
 
     def randmov(self, mouse):
+        self.showturtle()
         screen_height, screen_width = 500, 500
         r=random.randint(1, 4)
         mxcor = mouse.xcor()
@@ -65,43 +63,4 @@ class Mouse(Turtle):
             self.shape("assets/mouse_down.gif")
             self.forward(45)
 
-        # if r==1:
-        #     if (int(mouse.heading()) == 90 or \
-        #         int(mouse.heading()) == 270) and \
-        #         abs(mycor) + 45 >= screen_height/2:
-        #         r = random.choice([2, 3])
-        #     if (int(mouse.heading()) == 0 or \
-        #         int(mouse.heading()) == 180) and \
-        #         abs(mxcor) + 45 >= screen_width/2:
-        #         r = random.choice([2, 3])
-        #     return(mouse.forward(45))
-        # if r==4:
-        #     if (int(mouse.heading()) == 90 or \
-        #         int(mouse.heading()) == 270) and \
-        #         abs(mycor) + 45 >= screen_height/2:
-        #         r = random.choice([2, 3])
-        #     if (int(mouse.heading()) == 0 or \
-        #         int(mouse.heading()) == 180) and \
-        #         abs(mxcor) + 45 >= screen_width/2:
-        #         r = random.choice([2, 3])
-        #     return(mouse.back(45))
-        # if r==2:
-        #     if int(mouse.heading())== 90:
-        #         self.shape("assets/mouse_top.gif")
-        #     if int(mouse.heading())== 180:
-        #         self.shape("assets/mouse_left.gif")
-        #     if int(mouse.heading())== 270:
-        #         self.shape("assets/mouse_down.gif")
-        #     if int(mouse.heading())== 0:
-        #         self.shape("assets/mouse_right.gif")
-        #     return(mouse.left(90))
-        # if r==3:
-        #     if int(mouse.heading())== 90:
-        #         self.shape("assets/mouse_top.gif")
-        #     if int(mouse.heading())== 180:
-        #         self.shape("assets/mouse_left.gif")
-        #     if int(mouse.heading())== 270:
-        #         self.shape("assets/mouse_down.gif")
-        #     if int(mouse.heading())== 0:
-        #         self.shape("assets/mouse_right.gif")
-        #     return(mouse.right(90))
+       

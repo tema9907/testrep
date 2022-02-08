@@ -14,7 +14,7 @@ class TomasbiyAndJerrybek():
         self.screen_width  = 700
         # setup(600, 600)
         setup(self.screen_width, self.screen_height)
-        Screen()
+        #Screen()
         screen=Screen()
         title("Tomasbiy and Jerrybek")
         screen.addshape("assets/cat_left.gif")
@@ -27,10 +27,7 @@ class TomasbiyAndJerrybek():
         screen.addshape("assets/mouse_top.gif")
         self.cat = Cat()
         self.mouse = Mouse()
-        
         self.start()
-        #self.interface()
-
 
     def interface(self):
         print("1111111111111111")
@@ -38,19 +35,13 @@ class TomasbiyAndJerrybek():
         Drawing.draw_score(0)
         print("1111111111111111")
 
-
     def start(self):
         self.interface()
-        # print("1111111111111111")
-        # Drawing.draw_star(10,"red")
         self.cat.cat_move()
-        
         thread_mouse = Thread(target = self.mouse.move_mouse(self.mouse, self.cat))
         thread_mouse.start()
-        thread_collision = Thread(target=self.isCollision)
-        thread_collision.start()
         mainloop()
         thread_mouse.join()
-        thread_collision.join()
+       
 
     

@@ -28,11 +28,14 @@ class Drawing(Turtle):
         penup()
 
 
-    def draw_star(size,color):
+    def draw_star(x,y,size,color):
+        
         angle = 120
+        turtle.penup()
+        turtle.goto(x,y)
         turtle.fillcolor(color)
         turtle.begin_fill()
-
+        turtle.pendown()
         for side in range(5):
             turtle.forward(size)
             turtle.right(angle)
@@ -42,5 +45,7 @@ class Drawing(Turtle):
    
 
     def draw_score(score):
+        turtle.penup()
         goto(100,100)
+        turtle.pendown()
         write("score"+ str(score), move=False, align="left", font=("Arial", 12, "normal"))
