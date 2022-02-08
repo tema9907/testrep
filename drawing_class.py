@@ -7,16 +7,25 @@ from cat_class import Cat
 from mouse_class import Mouse
 
 class Drawing(Turtle):
-    def __init__(self) -> None:
-        self.our_pen = turtle.Turtle()
-        self.our_pen.penup()
-        self.floor()
+  
 
 
     def snowflake(self):
         pass
 
 
-    def floor(self):
-        self.pendown()
-        self.goto(200, 100)
+    def floor():
+        pendown()
+        goto(200, 100)
+    
+    def draw_star(size,color):
+        count = 0
+        angle = 144
+        fillcolor(color)
+        begin_fill()
+        for _ in range(5):
+            forward(size)
+            right(angle)
+            end_fill()
+
+    

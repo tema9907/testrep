@@ -22,6 +22,7 @@ from TomasbiyAndJerrybek import TomasbiyAndJerrybek
 
 game = TomasbiyAndJerrybek()
 game.interface()
+
 game.start()
 
 # def isCollision(cat, mouse):

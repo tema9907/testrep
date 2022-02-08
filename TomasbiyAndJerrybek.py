@@ -5,7 +5,7 @@ from threading import *
 
 from cat_class import Cat
 from mouse_class import Mouse
-from drawing_class import Drawing
+from drawing_class import *
 
 
 class TomasbiyAndJerrybek():
@@ -27,16 +27,23 @@ class TomasbiyAndJerrybek():
         screen.addshape("assets/mouse_top.gif")
         self.cat = Cat()
         self.mouse = Mouse()
+        
         self.start()
+        #self.interface()
 
 
     def interface(self):
-        self.drawing = Drawing()
-        self.drawing.floor()
+        Drawing.floor()
+        print("1111111111111111")
+        Drawing.draw_star(100,"purple")
 
 
     def start(self):
+        Drawing.floor()
+        print("1111111111111111")
+        Drawing.draw_star(100,"purple")
         self.cat.cat_move()
+        
         thread_mouse = Thread(target = self.mouse.move_mouse(self.mouse, self.cat))
         thread_mouse.start()
         thread_collision = Thread(target=self.isCollision)
