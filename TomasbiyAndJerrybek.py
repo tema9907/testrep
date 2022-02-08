@@ -26,13 +26,10 @@ class TomasbiyAndJerrybek():
         self.mouse = Mouse()
         self.start()
 
-<<<<<<< HEAD
 
     def interface(self):
         pass
 
-=======
->>>>>>> ed64282d91142386e8802a9aa35fbec0ec2d23cd
 
     def start(self):
         self.cat.cat_move()
