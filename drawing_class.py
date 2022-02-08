@@ -16,6 +16,18 @@ class Drawing(Turtle):
         turtle.showturtle()
         turtle.speed(0)
         turtle.penup()
+        turtle.goto(-250, -250)
+        turtle.pensize(2)
+        turtle.pendown()
+        turtle.setheading(0)
+        turtle.pencolor("brown")
+        for i in range(23):
+            turtle.forward(500)
+            turtle.penup()
+            turtle.goto(-250, -250 + i * 24)
+            turtle.pendown()
+        turtle.pencolor("black")
+        turtle.penup()
         turtle.goto(-250, 260)
         turtle.pendown()
         turtle.color("black")
@@ -61,3 +73,47 @@ class Drawing(Turtle):
             turtle.color("black")
             turtle.write("score: " + str(score), move=False, align="left", font=("Arial", 12, "normal"))
         turtle.hideturtle()
+    
+
+    def authors():
+        authors = turtle.Turtle()
+        authors.penup()
+        authors.hideturtle()
+        authors.speed(0)
+        authors.goto(255, 220)
+        authors.write("Выполнили:", move=False, align="left", font=("Arial", 12, "normal"))
+        authors.goto(255, 205)
+        authors.write("Жантурин", move=False, align="left", font=("Arial", 12, "normal"))
+        authors.goto(255, 190)
+        authors.write("Одарич", move=False, align="left", font=("Arial", 12, "normal"))
+        authors.goto(255, 175)
+        authors.write("Семейников", move=False, align="left", font=("Arial", 11, "normal"))
+        authors.goto(255, 160)
+        authors.write("Долгушин", move=False, align="left", font=("Arial", 12, "normal"))
+
+
+    def exit_button():
+        exitTurtle = turtle
+        exitTurtle.hideturtle()
+        exitTurtle.speed(0)
+        exitTurtle.goto(-340, 220)
+        exitTurtle.fillcolor("red")
+        exitTurtle.onclick(exit, 1, add=False)
+        exitTurtle.begin_fill()
+        exitTurtle.pendown()
+        setheading(0)
+        for _ in range(2):
+            exitTurtle.forward(80)
+            exitTurtle.right(90)
+            exitTurtle.forward(40)
+            exitTurtle.right(90)
+        exitTurtle.end_fill()
+        exitTurtle.penup()
+        exitTurtle.goto(-300, 160)
+        exitTurtle.write("exit", move=False, align="center", font=("Arial", 12, "bold"))
+        # def button(x,y):
+            # if x < 50 and x > -50 and y < 50 and y > -50:
+                # print(f"Your coordinates are: ({x}, {y}).")
+        # exitTurtle.onscreenclick(button, 1, add=False)
+        # exitTurtle.done()
+        # exitTurtle.hideturtle()

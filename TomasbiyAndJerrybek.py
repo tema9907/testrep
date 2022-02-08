@@ -25,6 +25,7 @@ class TomasbiyAndJerrybek():
         screen.addshape("assets/mouse_right.gif")
         screen.addshape("assets/mouse_down.gif")
         screen.addshape("assets/mouse_top.gif")
+        self.interface()
         self.mouse = Mouse()
         self.cat = Cat(self.mouse)
         self.start()
@@ -33,10 +34,11 @@ class TomasbiyAndJerrybek():
         print("1111111111111111")
         Drawing.floor()
         Drawing.draw_score(0)
-        print("1111111111111111")
+        # Drawing.exit_button()
+        Drawing.authors()
+        print("Interface нарисован")
 
     def start(self):
-        self.interface()
         self.cat.cat_move()
         thread_mouse = Thread(target = self.mouse.move_mouse(self.mouse, self.cat))
         thread_mouse.start()
