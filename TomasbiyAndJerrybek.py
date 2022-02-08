@@ -41,7 +41,7 @@ class TomasbiyAndJerrybek():
     def start(self):
         Drawing.floor()
         print("1111111111111111")
-        Drawing.draw_star(100,"purple")
+        Drawing.draw_star(10,"red")
         self.cat.cat_move()
         
         thread_mouse = Thread(target = self.mouse.move_mouse(self.mouse, self.cat))

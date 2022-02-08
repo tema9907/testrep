@@ -19,13 +19,16 @@ class Drawing(Turtle):
         goto(200, 100)
     
     def draw_star(size,color):
-        count = 0
-        angle = 144
-        fillcolor(color)
-        begin_fill()
-        for _ in range(5):
-            forward(size)
-            right(angle)
-            end_fill()
+        angle = 120
+        turtle.fillcolor(color)
+        turtle.begin_fill()
+
+        for side in range(5):
+            turtle.forward(size)
+            turtle.right(angle)
+            turtle.forward(size)
+            turtle.right(72 - angle)
+        turtle.end_fill()
+   
 
     
