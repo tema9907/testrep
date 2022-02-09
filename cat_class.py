@@ -3,6 +3,7 @@ from turtle import *
 import turtle
 from playsound import playsound
 from drawing_class import Drawing
+import asyncio
 
 
 class Cat(Turtle):
@@ -16,7 +17,8 @@ class Cat(Turtle):
 
 
     def caught(self, mouse):
-        Drawing.draw_score(self.score)
+        if self.score == 0:
+            Drawing.draw_score(self.score)
         cxcor = self.xcor()
         cycor = self.ycor()
         mxcor = mouse.xcor()
