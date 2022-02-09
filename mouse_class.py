@@ -4,9 +4,9 @@ from playsound import playsound
 from turtle import Turtle, screensize
 
 
-class Mouse(Turtle):
+class Mouse(Turtle): #Класс мыши
 
-    def __init__(self, shape: str = "assets/mouse_top.gif", visible: bool = True) -> None:
+    def __init__(self, shape: str = "assets/mouse_top.gif", visible: bool = True) -> None: #Конструктор Мыши
         super().__init__(shape, visible)
         self.showturtle()
         self.penup()
@@ -14,7 +14,7 @@ class Mouse(Turtle):
         self.sety(90)
 
 
-    def move_mouse(self, mouse, cat):
+    def move_mouse(self, mouse, cat): #Вызов Движения мыши
         c = 199
         while True:
             time.sleep(0.03)
@@ -37,7 +37,7 @@ class Mouse(Turtle):
                 #     pass
 
 
-    def randmov(self, mouse, cat):
+    def randmov(self, mouse, cat): #Случайное событие от 1 о 4 и выбор движения мыши
         # self.showturtle()
         screen_height, screen_width = 500, 500
         r=random.randint(1, 4)

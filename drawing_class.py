@@ -8,9 +8,9 @@ from math import sin, pi
 from cat_class import *
 from mouse_class import *
 
-class Drawing(Turtle):
+class Drawing(Turtle): #Класс Илюстратор 
 
-    def snowflake():
+    def snowflake(): #Снежинка по синусоиде
         angle = 0
         turtle.speed(0)
         turtle.pensize(2)
@@ -49,7 +49,7 @@ class Drawing(Turtle):
                 turtle.penup()
 
 
-    def floor():
+    def floor(): #Пол
         turtle.showturtle()
         turtle.speed(0)
         turtle.penup()
@@ -79,7 +79,7 @@ class Drawing(Turtle):
         turtle.hideturtle()
     
 
-    def draw_star(x,y,size,color):
+    def draw_star(x,y,size,color): #Звезда на месте ловли
         turtle.showturtle()
         angle = 120
         turtle.pencolor('black')
@@ -97,7 +97,7 @@ class Drawing(Turtle):
         turtle.hideturtle()
     
 
-    def draw_score(score):
+    def draw_score(score): #Рисование Очков
         turtle.showturtle()
         turtle.penup()
         goto(-365, 235)
@@ -115,7 +115,7 @@ class Drawing(Turtle):
             Drawing.snowflake()
     
 
-    def authors():
+    def authors(): #Надпись авторов 
         authors = turtle.Turtle()
         authors.penup()
         authors.hideturtle()

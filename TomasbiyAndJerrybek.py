@@ -7,7 +7,7 @@ from mouse_class import Mouse
 from drawing_class import *
 
 
-class TomasbiyAndJerrybek():
+class TomasbiyAndJerrybek(): #Основной игровой класс
     def __init__(self) -> None:
         self.screen_height = 512
         self.screen_width  = 750
@@ -29,7 +29,7 @@ class TomasbiyAndJerrybek():
         self.cat = Cat(self.mouse)
         self.start()
 
-    def interface(self):
+    def interface(self): #Интерфейс Пол, авторы и очки
         print("1111111111111111")
         Drawing.floor()
         Drawing.draw_score(0)
@@ -38,7 +38,7 @@ class TomasbiyAndJerrybek():
         
         print("Interface нарисован")
 
-    def start(self):
+    def start(self): #Инициализаци и запуск игры.
         self.cat.cat_move()
         thread_mouse = Thread(target = self.mouse.move_mouse(self.mouse, self.cat))
         # thread_mouse.start()

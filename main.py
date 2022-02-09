@@ -1,5 +1,5 @@
 from TomasbiyAndJerrybek import TomasbiyAndJerrybek
 
 
-game = TomasbiyAndJerrybek()
+game = TomasbiyAndJerrybek() #Игра
 game.start()
