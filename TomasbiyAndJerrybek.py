@@ -1,8 +1,7 @@
-import imp
 from time import sleep
 from turtle import *
 from threading import *
-
+# import asyncio
 from cat_class import *
 from mouse_class import Mouse
 from drawing_class import *
@@ -36,15 +35,18 @@ class TomasbiyAndJerrybek():
         Drawing.draw_score(0)
         # Drawing.exit_button()
         Drawing.authors()
-        Drawing.snowflake()
+        
         print("Interface нарисован")
 
     def start(self):
         self.cat.cat_move()
         thread_mouse = Thread(target = self.mouse.move_mouse(self.mouse, self.cat))
-        thread_mouse.start()
-        mainloop()
-        thread_mouse.join()
+        # thread_mouse.start()
+        # thread_snowflake = Thread(target = Drawing.snowflake())
+        # thread_snowflake.start()
+        # mainloop()
+        # thread_snowflake.join()
+        # thread_mouse.join()
        
 
     
