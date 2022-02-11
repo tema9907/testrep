@@ -1,5 +1,4 @@
-from TomasbiyAndJerrybek import TomasbiyAndJerrybek
+from TomasbiyAndJerrybek import TomasbiyAndJerrybek  # Импорт класса игры
 
-
-game = TomasbiyAndJerrybek() #Игра
-game.start()
+game = TomasbiyAndJerrybek()  # Игра
+game.start()  # Запуск игры
